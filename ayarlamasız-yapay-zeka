@@ -1,0 +1,11 @@
+client.on("message", async message => {
+  const ai = require('@codare/codare.ai')
+let kanal = "KANALID"
+if(message.channel.id !== kanal) return;
+if(message.author.bot == true) return;
+let soru = message.content;
+ai.sor(soru).then(enginar => {
+return message.channel.send(enginar) 
+
+});
+})
